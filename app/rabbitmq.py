@@ -1,4 +1,4 @@
-import pika, json, asyncio
+import pika, json
 from app.websocket import websocket_manager
 from app.config import RABBITMQ_URL
 import ssl
