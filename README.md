@@ -38,10 +38,9 @@ Ensure you have the following installed:
 
 ## Environment Variables
 
-Create a .env file in the project root with the following variables:
+Create a config.py file in the project app folder with the following variables:
 
 ```
-
 RABBITMQ_URL = your_rabbitmq_url
 QUEUE_NAME = your_queue_name
 DATABASE_URL = your_database_url
