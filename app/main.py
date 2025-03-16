@@ -32,13 +32,9 @@ app.add_middleware(
 )
 @app.websocket("/ws/{user_id}")
 async def websocket_endpoint(user_id: int, websocket: WebSocket):
-    await websocket.accept()
+
     await websocket_manager.connect(user_id, websocket)
-    try:
-        while True:
-            await websocket.receive_text()  # Keep the connection open
-    except WebSocketDisconnect:
-        websocket_manager.disconnect(user_id)
+
 
 @app.on_event("startup")
 def start_rabbitmq_consumer():
